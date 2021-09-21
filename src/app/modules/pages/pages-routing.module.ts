@@ -11,11 +11,11 @@ const pageRoutes: Routes = [
     component: HomeComponent,
   },
   {
-    path: '/about-us',
+    path: 'about-us',
     component: AboutUsComponent,
   },
   {
-    path: '/contact-us',
+    path: 'contact-us',
     component: ContactComponent,
   },
 ];

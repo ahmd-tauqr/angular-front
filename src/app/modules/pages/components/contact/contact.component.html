@@ -1,1 +1,35 @@
-<p>contact works!</p>
+<p [ngStyle]="{ color: isLoader ? 'red' : 'green' }">data is loaded</p>
+{{ domainData }}
+
+<input type="text" [value]="domainData" />
+
+<div class="container-fluid" *ngIf="!isLoader">
+  <div class="row">
+    <div class="col-sm-3 card" *ngFor="let todo of TODOITEMS">
+      <img
+        src="https://via.placeholder.com/150"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ todo.title | lowercase }}</h5>
+        <p>{{ todo.completed }}</p>
+        <p class="card-text" [style.color]="'blue'">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a (click)="printID(todo.id)" class="btn btn-primary"
+          >Go to item {{ todo.id }}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" *ngIf="isLoader">
+  <div class="row">
+    <p>loading...</p>
+  </div>
+</div>
+
+<!-- ng-container -->
