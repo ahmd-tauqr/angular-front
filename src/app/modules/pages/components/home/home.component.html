@@ -1,1 +1,6 @@
-<p>This is {{ pageName }}</p>
+<p class="red">Inside Home Component: Received from Child: {{ homeData }}</p>
+
+<app-contact
+  [contactData]="homeData"
+  (sendData)="sendSomeData($event)"
+></app-contact>

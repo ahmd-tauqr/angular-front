@@ -1,2 +1,94 @@
-<p>login works!</p>
-{{ mydata }}
+<section class="section">
+  <div class="container">
+    <h1 class="title">Login Page</h1>
+    <p class="subtitle"><strong>Login</strong> to your account</p>
+    <form [formGroup]="LoginForm">
+      <div class="field">
+        <label class="label">Username</label>
+        <div class="control has-icons-left has-icons-right">
+          <input
+            class="input is-success"
+            type="text"
+            placeholder="Username"
+            formControlName="username"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+        <!-- <div
+          *ngIf="LoginForm.invalid && (LoginForm.dirty || LoginForm.touched)"
+        >
+          <p class="help is-danger" *ngIf="lf.username.errors?.required">
+            Username is required
+          </p>
+          <p class="help is-danger" *ngIf="lf.username.errors?.minlength">
+            Username needs to be at least 8 characters long.
+          </p>
+        </div> -->
+      </div>
+
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control has-icons-left has-icons-right">
+          <input
+            class="input is-success"
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+        <!-- <div
+          *ngIf="LoginForm.invalid && (LoginForm.dirty || LoginForm.touched)"
+        >
+          <p class="help is-danger" *ngIf="lf.password.errors?.required">
+            Password is required
+          </p>
+          <p class="help is-danger" *ngIf="lf.password.errors?.minlength">
+            Password needs to be at least 8 characters long.
+          </p>
+        </div> -->
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox" formControlName="rememberMe" />
+            Remember Me
+          </label>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-link" (click)="login()">Login</button>
+        </div>
+        <div class="control">
+          <a
+            class="button is-link is-light"
+            [routerLink]="['../forgot-password']"
+            routerLinkActive="router-link-active"
+            >Forgot password?</a
+          >
+        </div>
+        <div class="control">
+          <a
+            class="button is-link is-light"
+            [routerLink]="['../register']"
+            routerLinkActive="router-link-active"
+            >Create New Account</a
+          >
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

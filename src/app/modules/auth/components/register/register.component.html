@@ -1,1 +1,85 @@
-<p>register works!</p>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Sign Up Page</h1>
+    <p class="subtitle"><strong>Create</strong> your account</p>
+
+    <div class="field">
+      <label class="label">First Name</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input is-success" type="text" placeholder="First Name" />
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Last Name</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input is-success" type="text" placeholder="Last Name" />
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+        <input class="input is-success" type="text" placeholder="Email" />
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control has-icons-left has-icons-right">
+        <input
+          class="input is-success"
+          type="password"
+          placeholder="Password"
+        />
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <label class="checkbox">
+          <input type="checkbox" />
+          I agree to <a href="#">terms and conditions</a>
+        </label>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">Create account</button>
+      </div>
+      <div class="control">
+        <a
+          class="button is-link is-light"
+          [routerLink]="['../login']"
+          routerLinkActive="router-link-active"
+          >Already registered?</a
+        >
+      </div>
+    </div>
+  </div>
+</section>

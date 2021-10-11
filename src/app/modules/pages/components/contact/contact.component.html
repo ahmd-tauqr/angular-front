@@ -1,9 +1,21 @@
-<p [ngStyle]="{ color: isLoader ? 'red' : 'green' }">data is loaded</p>
-{{ domainData }}
+<!-- <p [ngStyle]="{ color: isLoader ? 'red' : 'green' }">data is loaded</p> -->
 
-<input type="text" [value]="domainData" />
+<!-- <p>Inside Contact Component: Data Received: {{ contactData }}</p> -->
 
-<div class="container-fluid" *ngIf="!isLoader">
+<p #paragraphEl class="red">Lorum Ipsum Dolor Sit Amet...</p>
+
+<textarea name="address" id="" cols="30" rows="10" #addressEl></textarea>
+
+<template> </template>
+
+<br />
+<input type="text" #inputEl [value]="domainData" />
+<br />
+<button (click)="sendSomeData('Hello From Child')">Send Data</button>
+
+<!-- <input type="text" [value]="domainData" /> -->
+
+<!-- <div class="container-fluid" *ngIf="!isLoader">
   <div class="row">
     <div class="col-sm-3 card" *ngFor="let todo of TODOITEMS">
       <img
@@ -30,6 +42,6 @@
   <div class="row">
     <p>loading...</p>
   </div>
-</div>
+</div> -->
 
 <!-- ng-container -->
