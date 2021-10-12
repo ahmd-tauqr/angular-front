@@ -4,10 +4,17 @@
     <p class="subtitle"><strong>Login</strong> to your account</p>
     <form [formGroup]="LoginForm">
       <div class="field">
-        <label class="label">Username</label>
+        <label class="label">Username<span class="required">*</span></label>
         <div class="control has-icons-left has-icons-right">
           <input
-            class="input is-success"
+            class="input"
+            [ngClass]="{
+              'is-danger':
+                LoginForm.controls.username.invalid &&
+                (LoginForm.controls.username.dirty ||
+                  LoginForm.controls.username.touched),
+              'is-success': LoginForm.controls.username.valid
+            }"
             type="text"
             placeholder="Username"
             formControlName="username"
@@ -16,47 +23,88 @@
             <i class="fas fa-user"></i>
           </span>
           <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
+            <i
+              class="fas fa-check"
+              *ngIf="LoginForm.controls.username.valid"
+            ></i>
+            <i
+              class="fas fa-times"
+              *ngIf="LoginForm.controls.username.invalid"
+            ></i>
           </span>
         </div>
-        <!-- <div
-          *ngIf="LoginForm.invalid && (LoginForm.dirty || LoginForm.touched)"
+        <div
+          *ngIf="
+            LoginForm.controls.username.invalid &&
+            (LoginForm.controls.username.dirty ||
+              LoginForm.controls.username.touched)
+          "
         >
-          <p class="help is-danger" *ngIf="lf.username.errors?.required">
+          <p
+            class="help is-danger"
+            *ngIf="LoginForm.controls.username.errors?.required"
+          >
             Username is required
           </p>
-          <p class="help is-danger" *ngIf="lf.username.errors?.minlength">
-            Username needs to be at least 8 characters long.
+          <p
+            class="help is-danger"
+            *ngIf="LoginForm.controls.username.errors?.minlength"
+          >
+            Username needs to be at least 2 characters long.
           </p>
-        </div> -->
+        </div>
       </div>
 
       <div class="field">
-        <label class="label">Password</label>
+        <label class="label">Password<span class="required">*</span></label>
         <div class="control has-icons-left has-icons-right">
           <input
-            class="input is-success"
+            class="input"
+            [ngClass]="{
+              'is-danger':
+                LoginForm.controls.password.invalid &&
+                (LoginForm.controls.password.dirty ||
+                  LoginForm.controls.password.touched),
+              'is-success': LoginForm.controls.password.valid
+            }"
             type="password"
             placeholder="Password"
             formControlName="password"
           />
           <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-unlock"></i>
           </span>
           <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
+            <i
+              class="fas fa-check"
+              *ngIf="LoginForm.controls.password.valid"
+            ></i>
+            <i
+              class="fas fa-times"
+              *ngIf="LoginForm.controls.password.invalid"
+            ></i>
           </span>
         </div>
-        <!-- <div
-          *ngIf="LoginForm.invalid && (LoginForm.dirty || LoginForm.touched)"
+        <div
+          *ngIf="
+            LoginForm.controls.password.invalid &&
+            (LoginForm.controls.password.dirty ||
+              LoginForm.controls.password.touched)
+          "
         >
-          <p class="help is-danger" *ngIf="lf.password.errors?.required">
+          <p
+            class="help is-danger"
+            *ngIf="LoginForm.controls.password.errors?.required"
+          >
             Password is required
           </p>
-          <p class="help is-danger" *ngIf="lf.password.errors?.minlength">
+          <p
+            class="help is-danger"
+            *ngIf="LoginForm.controls.password.errors?.minlength"
+          >
             Password needs to be at least 8 characters long.
           </p>
-        </div> -->
+        </div>
       </div>
 
       <div class="field">
@@ -70,7 +118,13 @@
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link" (click)="login()">Login</button>
+          <button
+            class="button is-link"
+            [disabled]="LoginForm.invalid"
+            (click)="login()"
+          >
+            Login
+          </button>
         </div>
         <div class="control">
           <a

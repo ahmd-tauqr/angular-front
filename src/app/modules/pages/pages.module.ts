@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { PagesRoutingModule } from './pages-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { ProductCatelogComponent } from './components/product-catelog/product-catelog.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     AboutUsComponent,
     ContactComponent,
     PageNotFoundComponent,
+    ProductCatelogComponent,
   ],
   imports: [
     CommonModule,

@@ -28,10 +28,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  get lf() {
-    return this.LoginForm as FormGroup;
-  }
-
   login() {
     if (this.LoginForm.valid) {
       const loginCredentials = this.LoginForm.value;

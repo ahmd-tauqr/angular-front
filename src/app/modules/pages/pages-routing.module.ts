@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductCatelogComponent } from './components/product-catelog/product-catelog.component';
 
 const pageRoutes: Routes = [
   {
@@ -17,6 +18,15 @@ const pageRoutes: Routes = [
   {
     path: 'contact-us',
     component: ContactComponent,
+  },
+  {
+    path: 'products',
+    redirectTo: 'products/all',
+    component: ProductCatelogComponent,
+  },
+  {
+    path: 'products/all',
+    component: ProductCatelogComponent,
   },
 ];
 
