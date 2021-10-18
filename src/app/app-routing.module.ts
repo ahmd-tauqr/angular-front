@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './core/components/landing-page/landing-page.component';
+import { HomeComponent } from './modules/pages/components/home/home.component';
 import { PageNotFoundComponent } from './modules/pages/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: LandingPageComponent,
+    component: HomeComponent,
   },
   {
     path: 'auth',

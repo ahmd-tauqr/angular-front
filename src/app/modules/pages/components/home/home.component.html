@@ -1,6 +1,20 @@
-<p class="red">Inside Home Component: Received from Child: {{ homeData }}</p>
+<app-header></app-header>
 
-<app-contact
-  [contactData]="homeData"
-  (sendData)="sendSomeData($event)"
-></app-contact>
+<a [routerLink]="['/auth']">Auth</a>
+
+<img src="assets/image/error.png" alt="..." />
+
+<h1
+  (click)="goTo('auth')"
+  style="
+    cursor: pointer;
+    padding: 10px;
+    background: purple;
+    border-radius: 4px;
+    width: 200px;
+  "
+>
+  Auth
+</h1>
+
+<app-footer></app-footer>

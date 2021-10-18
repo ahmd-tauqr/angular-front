@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,11 +18,14 @@ export class HomeComponent implements OnInit {
 
   public UserRegistration: any;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   initForm() {}
 
   registerUser() {}
+  goTo(url: string) {
+    this.router.navigate([url]);
+  }
 }
